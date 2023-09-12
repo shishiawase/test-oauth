@@ -1,12 +1,22 @@
-const getUnixTimeStamp = (shift = 0) => Number((new Date() / 1000 + shift) | 0);
-
 window.onload = () => {
   document.getElementById("button").onclick = () => {
-    const date = new Date();
-    const timestamp = Number(date);
-
-    document.getElementById(
-      "logs"
-    ).innerHTML = `Date: ${date}<br />Timestamp: ${timestamp}`;
+    window.YaAuthSuggest.init(
+      {
+        client_id: "c46f0c53093440c39f12eff95a9f2f93",
+        response_type: "token",
+        redirect_uri: "https://examplesite.com/suggest/token",
+      },
+      "https://examplesite.com",
+      {
+        buttonSize: "m",
+        buttonView: "main",
+        buttonTheme: "light",
+        buttonBorderRadius: "0",
+        buttonIcon: "ya",
+      }
+    )
+      .then(({ handler }) => handler())
+      .then((data) => console.log("Сообщение с токеном", data))
+      .catch((error) => console.log("Обработка ошибки", error));
   };
 };
