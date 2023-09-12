@@ -9,6 +9,7 @@ window.onload = () => {
       "https://examplesite.com",
       {
         view: "button",
+        parentId: "buttonContainer",
         buttonSize: "m",
         buttonView: "main",
         buttonTheme: "light",
