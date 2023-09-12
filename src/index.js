@@ -8,6 +8,7 @@ window.onload = () => {
       },
       "https://examplesite.com",
       {
+        view: "button",
         buttonSize: "m",
         buttonView: "main",
         buttonTheme: "light",
