@@ -4,5 +4,4 @@ window.onload = () => {
    {
       flag: true
    }
-)
-};
+)};
