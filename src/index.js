@@ -7,9 +7,7 @@ const authorize = (data) => {
 
 const fetchYandexData = (token) =>
   fetch(`https://login.yandex.ru/info?format=json&oauth_token=${token}`).then(
-    (res) => {
-      console.log(res.json());
-    }
+    (res) => res.json()
   );
 
 window.onload = () => {
@@ -35,9 +33,9 @@ window.onload = () => {
       .then(async (data) => {
         const result = await fetchYandexData(data.access_token);
 
-        // authorize(result);
+        authorize(result);
 
-        console.log(`Result: ${result}\nData: ${data}`);
+        // console.log(`Result: ${result}\nData: ${data}`);
       })
       .catch((error) => console.log("Что-то пошло не так: ", error));
   };
