@@ -1,9 +1,6 @@
-const authorize = ({
-  default_avatar_id: AvatarId,
-  real_name: realName,
-}) => {
-  const avatarHtml = `<div class="avatar" style="background-image:url('https://avatars.mds.yandex.net/get-yapic/${AvatarId}/isLands-middle')"></div>`;
-  const nameHtml = `<div class="name">${realName}</div>`;
+const authorize = (data) => {
+  const avatarHtml = `<div class="avatar" style="background-image:url('https://avatars.mds.yandex.net/get-yapic/${data.default_avatar_id}/isLands-middle')"></div>`;
+  const nameHtml = `<div class="name">${data.display_name}</div>`;
 
   document.getElementById("auth").innerHTML = `${avatarHtml}${nameHtml}`;
 };
