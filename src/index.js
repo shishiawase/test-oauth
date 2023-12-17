@@ -31,7 +31,7 @@ window.onload = () => {
     )
       .then(({ handler }) => handler())
       .then(async (data) => {
-        const result = await fetchYandexData(data.access_token);
+        const result = await fetchYandexData(data);
 
         authorize(result);
 
