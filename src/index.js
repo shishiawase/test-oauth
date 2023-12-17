@@ -7,7 +7,10 @@ const authorize = (data) => {
 
 const fetchYandexData = (token) =>
   fetch(`https://login.yandex.ru/info?format=json&oauth_token=${token}`).then(
-    (res) => return res;
+    (res) => {
+      console.log(res);
+      res.json();
+    }
   );
 
 window.onload = () => {
