@@ -1,3 +1,18 @@
+const authorize = ({
+  default_avatar_id: AvatarId,
+  display_name: displayName,
+}) => {
+  const avatarHtml = `<div class="avatar" style="background-image:url('https://avatars.mds.yandex.net/get-yapic/${AvatarId}/isLands-middle')"></div>`;
+  const nameHtml = `<div class="name">${displayName}</div>`;
+
+  document.getElementById("auth").innerHTML = `${avatarHtml}${nameHtml}`;
+};
+
+const fetchYandexData = (token) =>
+  fetch(`https://login.yandex.ru/info?format=json&ouath_token=${token}`).then(
+    (res) => res.json()
+  );
+
 window.onload = () => {
   document.getElementById("button").onclick = () => {
     window.YaAuthSuggest.init(
@@ -13,7 +28,7 @@ window.onload = () => {
         buttonSize: "m",
         buttonView: "main",
         buttonTheme: "light",
-        buttonBorderRadius: "0",
+        buttonBorderRadius: "22",
         buttonIcon: "ya",
       }
     )
