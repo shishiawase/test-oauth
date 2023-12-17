@@ -35,7 +35,6 @@ window.onload = () => {
       .then(({ handler }) => handler())
       .then(async (data) => {
         const result = await fetchYandexData(data.access_token);
-        document.body.innerHTML += `Сообщение с токеном: ${JSON.stringify(data)}`;
 
         authorize(result);
 
