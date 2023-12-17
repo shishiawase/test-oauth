@@ -38,7 +38,7 @@ window.onload = () => {
 
         // authorize(result);
 
-        console.log(result, data);
+        console.log(`Result: ${result}\nData: ${data}`);
       })
       .catch((error) => console.log("Что-то пошло не так: ", error));
   };
