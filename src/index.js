@@ -1,9 +1,9 @@
 const authorize = ({
   default_avatar_id: AvatarId,
-  display_name: displayName,
+  real_name: realName,
 }) => {
   const avatarHtml = `<div class="avatar" style="background-image:url('https://avatars.mds.yandex.net/get-yapic/${AvatarId}/isLands-middle')"></div>`;
-  const nameHtml = `<div class="name">${displayName}</div>`;
+  const nameHtml = `<div class="name">${realName}</div>`;
 
   document.getElementById("auth").innerHTML = `${avatarHtml}${nameHtml}`;
 };
@@ -35,6 +35,7 @@ window.onload = () => {
       .then(({ handler }) => handler())
       .then(async (data) => {
         const result = await fetchYandexData(data.access_token);
+        document.body.innerHTML += `Сообщение с токеном: ${JSON.stringify(data)}`;
 
         authorize(result);
 
