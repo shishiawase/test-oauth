@@ -16,7 +16,7 @@ window.onload = () => {
       {
         client_id: "5d752d1cc538431ab8e367cba7fc77a4",
         response_type: "token",
-        redirect_uri: "https://test-oauth-eight.vercel.app/token/",
+        redirect_uri: "https://test-oauth-eight.vercel.app/token.html",
       },
       "https://test-oauth-eight.vercel.app",
       {
